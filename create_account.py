@@ -6,14 +6,12 @@ class Account:
 
     def __init__(self, username, password):
 
-      # docstring removed for simplicity
-
         self.username = username
         self.password = password
 
     def save_user(self):
         '''
-        save_contact method saves contact objects into contact_list
+        save_user method saves user objects into credentials
         '''
         Account.credentials.append(self)
         print("Account Created Successfully")
@@ -22,18 +20,21 @@ class Account:
     @classmethod
     def check_user(cls, user, passw):
         '''
-        save_contact method saves contact objects into contact_list
+        check user method is the one that is checking user credentials in order to login
         '''
         for cred in cls.credentials:
             if(cred.username == user, cred.password == passw):
                 print("User succesfully logged in")
-                return False
+                return True
             else:
                 print("User doesn't exist")
             # print(cred.password)
 
     @classmethod
     def Display(cls):
+        '''
+        Display method displays every account created
+        '''
         for eve in Account.credentials:
 
             print("you have created "+eve.username +
@@ -41,13 +42,9 @@ class Account:
             print("\n")
 
     def Remove(self):
+        '''
+        Remove method deletes one of the accounts created before
+        '''
         Account.credentials.remove(self)
         print("Account with " + self.username + " was Successfully deleted")
         print("\n")
-    # def delete_contact(self):
-
-    #     '''
-    #     delete_contact method deletes a saved contact from the contact_list
-    #     '''
-
-    #     Login.credentials.remove(self)

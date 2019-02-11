@@ -1,5 +1,4 @@
 from create_account import Account
-from data import Data
 
 # def Create_User():
 print("Welcome to Password Locker")
@@ -7,7 +6,7 @@ print("\n")
 print("Please create an account")
 print("\n")
 print("Enter username")
-username = input().lower()
+username = input()
 print("Do you want us to generate a password for you ? y-Yes, n-No")
 confirm = input().lower()
 if(confirm == 'y'):
@@ -20,21 +19,29 @@ myAccount = Account(username, password)
 myAccount.save_user()
 print(f"Log in details for {username}  have been saved")
 
+
 def Sign_in():
+    '''
+        Sign_in method helps to retrieve data from the user and pass it into Account class to perform the sign in action
+    '''
     print("Welcome to Login Interface")
     print("Fill in the required details")
     print("Please enter a username")
-    usernameLog = input().lower()
+    usernameLog = input()
     print("Please add a password")
     passwordLog = input().lower()
     Account.check_user(usernameLog, passwordLog)
 
 
 def Add_user():
+    '''
+        add_user method creates unlimited amount of account that the user will want to create
+    '''
+
     print("Add an Account")
     print("\n")
     print("Enter username")
-    username = input().lower()
+    username = input()
     print("Do you want us to generate a password for you ? y-Yes, n-No")
     confirm = input().lower()
     if(confirm == 'y'):
@@ -49,6 +56,9 @@ def Add_user():
 
 
 def main():
+    '''
+        main function that make everything happen
+    '''
     # print("Welcome!")
     # Create_User()
 
