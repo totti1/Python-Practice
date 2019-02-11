@@ -23,7 +23,7 @@ class Account:
         check user method is the one that is checking user credentials in order to login
         '''
         for cred in cls.credentials:
-            if(cred.username == user, cred.password == passw):
+            if(cred.username == user and cred.password == passw):
                 print("User succesfully logged in")
                 return True
             else:
