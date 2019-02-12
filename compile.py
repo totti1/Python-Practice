@@ -13,10 +13,11 @@ if(confirm == 'y'):
     password = "1234567890"
     print("Your Paasword is "+password)
 else:
+    print("Now create your own password")
     password = input().lower()
 
 myAccount = Account(username, password)
-myAccount.save_user()
+myAccount.save_account()
 print(f"Log in details for {username}  have been saved")
 
 
@@ -51,7 +52,7 @@ def Add_user():
         password = input().lower()
 
     myAccount = Account(username, password)
-    myAccount.save_user()
+    myAccount.save_account()
     print(f"Log in details for {username}  have been saved")
 
 
